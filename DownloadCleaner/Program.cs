@@ -18,15 +18,12 @@ namespace DownloadCleaner
 
         static void Main(string[] args)
         {
-            if(args.Length != 0)
+            if (args.Contains("--uninstall"))
             {
-                if (args[0] == "--uninstall")
-                {
-                    File.Delete(downloadCleanerLocation);
-                    Microsoft.Win32.RegistryKey key = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true);
-                    key.DeleteValue(registryName, false);
-                    return;
-                }
+                File.Delete(downloadCleanerLocation);
+                Microsoft.Win32.RegistryKey key = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true);
+                key.DeleteValue(registryName, false);
+                return;
             }
 
             Console.WriteLine("Clearing downloads folder!");

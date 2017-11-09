@@ -44,6 +44,7 @@ namespace DownloadCleaner
             {
                 Console.ReadLine();
             }
+            Environment.Exit(0);
         }
 
         public static void Empty(DirectoryInfo directory)

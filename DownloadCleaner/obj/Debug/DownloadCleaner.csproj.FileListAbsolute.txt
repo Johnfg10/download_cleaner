@@ -1,0 +1,7 @@
+C:\Users\john\source\repos\Download_Cleaner\DownloadCleaner\bin\Debug\DownloadCleaner.exe.config
+C:\Users\john\source\repos\Download_Cleaner\DownloadCleaner\bin\Debug\DownloadCleaner.exe
+C:\Users\john\source\repos\Download_Cleaner\DownloadCleaner\bin\Debug\DownloadCleaner.pdb
+C:\Users\john\source\repos\Download_Cleaner\DownloadCleaner\obj\Debug\DownloadCleaner.csprojResolveAssemblyReference.cache
+C:\Users\john\source\repos\Download_Cleaner\DownloadCleaner\obj\Debug\DownloadCleaner.csproj.CoreCompileInputs.cache
+C:\Users\john\source\repos\Download_Cleaner\DownloadCleaner\obj\Debug\DownloadCleaner.exe
+C:\Users\john\source\repos\Download_Cleaner\DownloadCleaner\obj\Debug\DownloadCleaner.pdb

@@ -40,6 +40,10 @@ namespace DownloadCleaner
                 key.SetValue(registryName, downloadCleanerLocation);
             }
             Empty(new DirectoryInfo(downloadfolder));
+            if (args.Contains("--debug"))
+            {
+                Console.ReadLine();
+            }
         }
 
         public static void Empty(DirectoryInfo directory)

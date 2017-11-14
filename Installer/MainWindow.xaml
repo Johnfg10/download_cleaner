@@ -1,0 +1,14 @@
+﻿<Window x:Class="Installer.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Installer"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <Label Name="errorLabel" Margin="0,0,0,279"></Label>
+        <Button Name="InstallButton" Click="InstallButton_Click" Margin="0,293,417,1">Install</Button>
+        <Button Name="UnInstallButton" Click="UnInstallButton_Click"  Margin="417,293,0,0">Uninstall</Button>
+    </Grid> 
+</Window>

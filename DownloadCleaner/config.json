@@ -1,0 +1,10 @@
+﻿[
+  {
+    "name": "standard_clean",
+    "cleanRecycling": true,
+    "dirsToClean": [
+      "$DOWNLOADS$",
+      ""
+    ]
+  }
+]

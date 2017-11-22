@@ -44,7 +44,7 @@ namespace DownloadCleaner
             return source;
         }
 
-        
+
 
         public static string GetEmbeddedResource(string resourceName, Assembly assembly)
         {
@@ -89,7 +89,7 @@ namespace DownloadCleaner
             if (!File.Exists(cleanerConfig))
             {
                 string config = GetEmbeddedResource("config.json", Assembly.GetExecutingAssembly());
-                
+
                 File.CreateText(cleanerConfig).Close();
 
                 File.WriteAllText(cleanerConfig, config);
@@ -98,7 +98,7 @@ namespace DownloadCleaner
             var configString = InsertConfigReplacements(File.ReadAllText(cleanerConfig));
             Console.WriteLine(configString);
             config = JsonConvert.DeserializeObject<Config>(configString);
-           
+
 
             if (args.Contains("--help"))
             {
@@ -123,7 +123,7 @@ namespace DownloadCleaner
 
             if (args.Contains("--clean"))
             {
-                
+
             }
 
 
@@ -132,6 +132,8 @@ namespace DownloadCleaner
                 ConfigClean("standard_clean");
                 Console.Read();
             }
+
+            Environment.Exit(0);
         }
         //standard is standard_clean
         public void ConfigClean(string configSection)
@@ -149,8 +151,8 @@ namespace DownloadCleaner
                 var dirInfo = new DirectoryInfo(dir);
                 Empty(dirInfo);
             }
-            
+
         }
-        
+
     }
 }

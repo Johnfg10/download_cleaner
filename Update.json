@@ -1,5 +1,5 @@
 {
   "version":"1.0.0",
-  "downloadUrl":"someurl",
+  "windowsDownloadUrl":"someurl",
   "changeLogUrl":"someotherurl"
 }

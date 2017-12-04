@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<Product Id="*" Name="DownloadCleanerInstaller" Language="1033" Version="1.0.0" Manufacturer="Johnfg10" UpgradeCode="5511538b-80c2-4869-b90f-1c7ed630d0e4">
+		<Package InstallerVersion="300" Compressed="yes" InstallScope="perMachine" />
+	  <Media Id="1" Cabinet="DownloadCleaner.cab" EmbedCab="yes" />
+
+	  <Directory Id="TARGETDIR" Name="SourceDir">
+	    <Directory Id="ProgramFilesFolder">
+	      <Directory Id="APPLICATIONROOTDIRECTORY" Name="DownloadCleaner"/>
+	    </Directory>
+	  </Directory>
+    
+    <DirectoryRef Id="APPLICATIONROOTDIRECTORY">
+      <Component Id="DownloadCleanerCore.exe" Guid="fc3bd1e4-b7a5-42ca-afc9-3c33837cd8b3">
+        <File Id="DownloadCleanerCore.exe" Source="C:\Users\john\source\repos\Download_Cleaner_2\DownloadCleanerCore\bin\Release\DownloadCleanerCore.exe" KeyPath="yes" Checksum="yes"/>
+      </Component>
+      <Component Id="Syroot.Windows.IO.KnownFolders.dll" Guid="f153679c-d378-4b8b-a3b2-6766531f95b5">
+        <File Id="Syroot.Windows.IO.KnownFolders.dll" Source="C:\Users\john\source\repos\Download_Cleaner_2\DownloadCleanerCore\bin\Release\Syroot.Windows.IO.KnownFolders.dll" KeyPath="yes"/>
+      </Component>
+    </DirectoryRef>
+
+    <DirectoryRef Id="APPLICATIONROOTDIRECTORY">
+
+      <Component Id="RegistryEntries" Guid="ce491fa7-ec45-4396-9205-93262bea9a9d">
+        <RegistryKey Root="HKCU"
+                     Key="Software\Microsoft\Windows\CurrentVersion\Run"
+                     Action="createAndRemoveOnUninstall">
+          <RegistryValue Type="string" Name="DownloadCleaner" Value="[#DownloadCleanerCore.exe]" KeyPath="yes"/>
+        </RegistryKey>
+      </Component>
+    </DirectoryRef>
+   
+	  <DirectoryRef Id="TARGETDIR">
+	    <Component Id="EnviormentEntries" Guid="e2098614-09c0-47a6-bb14-5f54f8b35f6d">
+	      <Environment Id="PATH" Name="PATH" Value="[APPLICATIONROOTDIRECTORY]" Permanent="no" Part="last" Action="set" System="yes"/>
+	    </Component>
+	  </DirectoryRef>
+    
+    
+	  <Feature Id="MainApplication" Title="Main Application" Level="1">
+	    <ComponentRef Id="DownloadCleanerCore.exe" />
+	    <ComponentRef Id="Syroot.Windows.IO.KnownFolders.dll" />
+	    <ComponentRef Id = "RegistryEntries"/>
+	    <ComponentRef Id = "EnviormentEntries"/>
+	  </Feature>
+    
+  </Product>
+</Wix>
